@@ -182,37 +182,7 @@ Configurar Secretos FTP en GitHub
 
 ### SUBIR EL SITIO A GITHUB
 En el directorio de tu proyecto Hugo, crea un archivo llamado 
-.github/workflows/deploy.yml y agrega el siguiente contenido:
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  deploy:
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          submodules: true
-          fetch-depth: 0
-
-name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: '0.126.2'
-          extended: true
-
-name: Build
-        run: hugo --minify
-
-name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GH_TOKEN }}
-          publish_branch: deployed
-          publish_dir: ./public
+.github/workflows/deploy.yml y agrega el contenido en el quickstart.
 
 ## ENLACES
 
